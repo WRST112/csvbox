@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csvbox"
+version = "0.1.0"
+description = "Print CSV files as box-drawn tables in the terminal"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["csv", "table", "terminal", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+csvbox = "csvbox:main"
+
+[tool.setuptools]
+py-modules = ["csvbox"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
